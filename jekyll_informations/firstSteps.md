@@ -37,6 +37,7 @@ Dokumentation: https://jekyllrb.com/docs/home/
             Source: gh-pages branch  
         - für eigene Domain die url in der config anpassen 
             url: "http://byschiller.de"
+        - CNAME Datei zum Repo hinzufügen (automatisch, wenn custom domain in den Einstellungen festgelegt wird)
 
 5. Frontmatter
     alle Seiten von jekyll besitzen frontmatter, diese enthalten wichitige Informationen über die Seite, z.B.:
