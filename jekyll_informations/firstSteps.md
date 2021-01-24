@@ -20,10 +20,10 @@ Dokumentation: https://jekyllrb.com/docs/home/
     Dokumentation: https://jekyllrb.com/docs/github-pages/
     Quelle: https://www.youtube.com/watch?v=fqFjuX4VZmU
     Webseite für ein Projekt:
-        - Projekt/Repository erstellen (z.B. WebSiteBySchiller) und klonen
+        - Projekt/Repository erstellen (z.B. WebsiteBySchiller) und klonen
             git clone ...
         - config.yml überarbeiten (GitHub Domain):
-            baseurl: "WebSiteBySchiller"   # Repo name
+            baseurl: "WebsiteBySchiller"   # Repo name
         - git bash öffnen und Branch wechseln zu gh-pages 
             git checkout -b gh-pages
         - sicherstellen, dass sich alle erzeugten Dateien im root Ordner liegen und nicht in einem Unterverzeichnis
@@ -35,6 +35,8 @@ Dokumentation: https://jekyllrb.com/docs/home/
             git push origin gh-pages
         - Dateien in GitHub überprüfen und Einstellungen anpassen:
             Source: gh-pages branch  
+        - für eigene Domain die url in der config anpassen 
+            url: "http://byschiller.de"
 
 5. Frontmatter
     alle Seiten von jekyll besitzen frontmatter, diese enthalten wichitige Informationen über die Seite, z.B.:
