@@ -21,7 +21,7 @@
 title: Projects by Schiller 
 email: arno-schiller@hotmail.de
 description: >- # this means to ignore newlines until "baseurl:"
-  Dieser Blog stellt Tutorials und Projekte in Themenbereichen wie Internet Of Things (IoT), Deep Learning und Grafical User Interface (GUI) vor. Es wird kein Fachwissen vorausgesetzt, da die Erklärungen von Beginn an auf grundlegendem Niveau aufbauen und notfalls auf entsprechende Literatur verwieden wird.
+  Dieser Blog stellt Tutorials und Projekte in Themenbereichen wie Internet Of Things (IoT), Deep Learning und Grafical User Interface (GUI) vor. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.byschiller.de" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ArnoSchiller
@@ -30,6 +30,22 @@ github_username:  ArnoSchiller
 theme: minima
 plugins:
   - jekyll-feed
+
+# Custom frontmatter (Tutorial 10 - YT)
+defaults:
+  - 
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# create a collection for authors stored in ./_authors
+# https://jekyllrb.com/docs/collections/
+collections:
+  authors:
+    people: true
+    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
