@@ -22,8 +22,8 @@ title: Projects by Schiller
 email: arno-schiller@hotmail.de
 description: >- # this means to ignore newlines until "baseurl:"
   Dieser Blog stellt Tutorials und Projekte in Themenbereichen wie Internet Of Things (IoT), Deep Learning und Grafical User Interface (GUI) vor. Es wird kein Fachwissen vorausgesetzt, da die Erklärungen von Beginn an auf grundlegendem Niveau aufbauen und notfalls auf entsprechende Literatur verwieden wird.
-baseurl: "WebsiteBySchiller" # the subpath of your site, e.g. /blog
-url: "http://byschiller.de" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.byschiller.de" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ArnoSchiller
 
 # Build settings
