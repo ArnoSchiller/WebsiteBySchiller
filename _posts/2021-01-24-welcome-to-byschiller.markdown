@@ -4,6 +4,7 @@ title:  "Willkommen bei BySchiller!"
 date:   2021-01-24 19:50:05 +0100
 author: Arno Schiller
 categories: update introduction 
+permalink: /updates/welcome
 ---
 
 Moin und herzlich Willkommen bei BySchiller! 

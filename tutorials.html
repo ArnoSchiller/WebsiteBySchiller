@@ -1,0 +1,9 @@
+---
+layout: page
+title: Tutorials 
+permalink: /tutorials/
+---
+
+{% for a in site.tutorials %}
+    <li> <a href="{{a.url}}"> {{a.title}} </a> </li>
+{% endfor %}
