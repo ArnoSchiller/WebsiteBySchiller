@@ -4,7 +4,8 @@
 
 layout: home
 ---
-# Moin zusammen!
+**Moin zusammen!**
+<br>
 Diese Webseite dient der Dokumentation laufender [Projekte](./projects). Dabei werden modulare Themen in grundlegende [Tutorials](./tutorials) ausgelagert. Der bisherige thematische Schwerpunkt liegt auf IoT und maschinellem Lernen. Weitere Themenbereiche folgen. 
 
 Die [Autoren](./authors) sind für weitere Projekte offen und freuen sich über sämtliche Rückmeldung!
