@@ -87,5 +87,5 @@ Zusätzlich zu den genannten Optionen können weitere Konfigurationen vorgenomme
 
 
 ---
-## Quellen:
+### Quellen:
 - [Dokumentation von raspotify](https://dtcooper.github.io/raspotify/)
