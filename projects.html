@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Tutorials 
-permalink: /tutorials/
+title: Projekte 
+permalink: /projects/
 ---
 <ul class="post-list">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-{% for tutorial in site.tutorials %}
+{% for project in site.projects %}
   <li>
-    <span class="post-meta">{{ tutorial.date | date: date_format }}</span>
+    <span class="post-meta">{{ project.date | date: date_format }}</span>
     <h3>
-      <a class="post-link" href="{{ tutorial.url | relative_url }}">
-        {{ tutorial.title | escape }}
+      <a class="post-link" href="{{ project.url | relative_url }}">
+        {{ project.title | escape }}
       </a>
     </h3>
   </li> 
