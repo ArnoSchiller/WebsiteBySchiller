@@ -12,7 +12,7 @@ permalink: /tutorials/raspberry-pi/mosquitto-installation
 [MQTT](https://mqtt.org/) findet in vielen Anwendungsbereichen seinen Einsatz. Gerade in Hinblick auf IoT etablierte sich dieses Kommunikationsprotokoll als Standard. Das MQTT-Protokoll implementiert die [Publisher-Subscriber-Architektur](https://docs.microsoft.com/en-us/azure/architecture/patterns/publisher-subscriber). Um eine Kommunikation via MQTT herzustellen, wird ein MQTT-Broker benötigt, der die Nachrichten empfängt und diese an alle verbundenen Geräte weiterleitet. Weitere Informationen zu MQTT können dieser [Erklärung](https://www.opc-router.de/was-ist-mqtt/) entnommen werden. 
 
 ## Erforderliches Equipment 
-- Raspberry Pi (hier Modell 3 B)
+- Raspberry Pi (getestet mit Modell 3B und Modell 2)
 - ggf. Maus, Tastatur und Monitor  
 
 ## Installation von Mosquitto auf dem Raspberry Pi
@@ -66,4 +66,4 @@ Auch nach einem Restart des Raspberry Pi wird der Service von Mosquitto gestarte
 
 ---
 ### Quellen:
-- [Installation von Mosquitto unter Debian](https://mosquitto.org/blog/2013/01/mosquitto-debian-repository/)
+- [Dokumentation von Mosquitto](https://mosquitto.org/blog/2013/01/mosquitto-debian-repository/)
