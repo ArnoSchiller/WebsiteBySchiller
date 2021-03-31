@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "WS2812B LED-Strip mit dem ESP32 ansteuern"
+date:   2021-03-03 00:00:05 +0100
+author: Arno Schiller
+tag: tutorial 
+categories: esp32 led-strip ws2812b  
+permalink: /tutorials/esp32/ws2812b
+---
+
+## Einleitung
+
+
+## Erforderliches Equipment 
+- ESP32 (Dev Module)
+- WS2812B LED-Strip 
+
+## Erste Schritte mit dem ESP32 und dem WS2812B LED-Stip
+---
+### Schritt 1: Installieren der Bibliothek
+
+Für das Ansteuern von LED-Stripes stehen zahlreiche Bibliotheken zur Verfügung. Im folgenden wird die *FastLED*-Bibliothek von Daniel Garcia (Version 3.4.0) verwendet. Diese Bibliothek kann in der Arduino IDE unter ```Werkzeuge -> Bibliotheken verwalten...``` hinzugefügt werden. 
+
+### Schritt 2: Ausführen eines Testprogramms 
+Um das das Ganze zu testen, muss der LED-Strip mit dem ESP32 verbunden werden. Die Verbindung wurde wie folgt vorgenommen: 
+| WS2812B   | ESP32 |
+|-----------|-------|
+| 5V        | 5V    |
+| D0 (Data) | G21   |
+| GND       | GND   |
+
+Anschließend kann das Testskript von [FastLED](https://github.com/FastLED/FastLED) ausgeführt werden. Dieses wurde im Folgenden leicht modifiziert. 
+
+```arduino
+#include "FastLED.h"
+
+#define NUM_LEDS 1
+#define DATA_PIN 21
+
+CRGB leds[NUM_LEDS];
+
+void setup() { FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); }
+
+void loop() {
+	leds[0] = CRGB::White; FastLED.show(); delay(30);
+	leds[0] = CRGB::Black; FastLED.show(); delay(30);
+}
+```
+Wenn alles korrekt angeschlossen wurde, sollte nun die erste LED sehr schnell blinken. 
+
+### Schritt 3: Erste eigene Annimation 
+Da bisher nur eine LED angesteuert wird, sollen nun die ersten zehn LEDs verwendet werden. Um eine annimierte Bewegung zu erhalten, werden die LEDs mit einem kleinen Delay angesteuert. Es wird eine Funktion geschrieben, die die LEDs in der Farbe weiß nacheinander anschaltet, eine weitere Funktion soll die LEDs in umgekehrter Richtung wieder ausschalten. Zudem wird eine Funktion geschrieben, die die Farbe der LEDs anpasst. Hier werden die Farbwerte ohne Delay geändert und erst im Anschluss die Änderung sichtbar gemacht. Der folgende Code schaltet die LEDs nacheinander an, ändert dessen Farbe und schaltet sie anschließend in umgekehrter Reihenfolge aus. 
+```arduino
+#include "FastLED.h"
+#define NUM_LEDS 10
+#define DATA_PIN 21
+
+CRGB leds[NUM_LEDS];
+void setup() { FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS); }
+
+void loop() {
+  turn_on(); 
+  delay(2000);
+  change_color(100, 0, 0); 
+  delay(2000);
+  turn_off(); 
+  delay(2000);
+}
+
+void turn_on(){
+  for(int i = 0; i < NUM_LEDS; i++){
+    leds[i] = CRGB::White;
+    FastLED.show(); 
+    delay(30);
+  } 
+}
+
+void turn_off(){
+  for(int i = NUM_LEDS-1; i >=0; i--){
+    leds[i] = CRGB::Black;
+    FastLED.show(); 
+    delay(30);
+  } 
+}
+
+void change_color(int r, int g, int b){
+  for(int i = 0; i < NUM_LEDS; i++){
+    leds[i] = CRGB(r, g, b);
+  }
+  FastLED.show();
+}
+```
+
+
+### Quellen:
+- [Dokumentation von FastLED](https://github.com/FastLED/FastLED)
